@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY . .
 
+RUN deno cache --lock=deno.lock main.ts
+
 CMD ["deno", "run", "--allow-net", "main.ts"] 
