@@ -6,11 +6,17 @@ const handler = (req: Request): Response => {
       status: 200,
       headers: {
         "content-type": "text/plain",
+        "Access-Control-Allow-Origin": "https://paolino.io/",
       },
     });
   }
 
-  return new Response("Not Found", { status: 404 });
+  return new Response("Not Found", {
+    status: 404,
+    headers: {
+      "Access-Control-Allow-Origin": "https://paolino.io/",
+    },
+  });
 }
 
 Deno.serve({ port: 8000 }, handler); 
